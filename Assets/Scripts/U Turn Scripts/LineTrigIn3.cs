@@ -11,4 +11,4 @@ public class LineTrigIn3 : MonoBehaviour {// lineInTrigger refers to first turn 
             
         }
     }
-}
+}//end class

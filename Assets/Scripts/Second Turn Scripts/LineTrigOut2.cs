@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LineTrigOut2 : MonoBehaviour {// lineOutTrigger refers to second turn corner's end point
+public class LineTrigOut2 : MonoBehaviour { // lineOutTrigger refers to second turn corner's end point
     public bool lineOut2Triggered = false;
     public ScoreScript scoreScript;
 
@@ -14,7 +14,7 @@ public class LineTrigOut2 : MonoBehaviour {// lineOutTrigger refers to second tu
 
             scoreScript.scoreAmount++;// increase score when 2. turn completed
             lineOut2Triggered = true;
-            // bool gelecek viraja girince Hinge leri enable yapcaz
+            
         }
     }
 }//end class

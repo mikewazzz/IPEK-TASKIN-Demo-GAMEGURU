@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour {
     public LineTrigOut3 lineTrigOut3;
     public EndTrigger endTrigger;
     public Image[] handles;
- 
+
 
     public void EndGame() {
 
@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour {
     }
 
     void Update() {
-        
+
 
         if (lineTriggerOut1.lineOutTriggered == true) {
             if (handles.Length > 0) {
@@ -44,16 +44,18 @@ public class GameManager : MonoBehaviour {
                 handles[1].color = Color.red;// line out 2 passed, 2. progressbar red 
             }
         }
-        if (lineTrigOut3.lineOut3Triggered==true) {
+        if (lineTrigOut3.lineOut3Triggered == true) {
             if (handles.Length > 0) {
                 handles[2].color = Color.red;// line out 3 passed, 3. progressbar red  and level complete level UI displays
-                
+
 
             }
-            if (endTrigger.endTriggered==true) {
-                buttonQuitUI.SetActive(true); // enables QUIT button, On click attacth to Restart()
-            }
+
         }
+        if (endTrigger.endTriggered == true) {
+            buttonQuitUI.SetActive(true); // enables QUIT button, On click attacth to Restart()
+        }
+
     }
     public void Perfect() {
         textPerfectUI.SetActive(true);//displays perfect! UI
@@ -68,6 +70,6 @@ public class GameManager : MonoBehaviour {
 
         levelCompleteUI.SetActive(true);
     }
-         
+
 
 }//end class

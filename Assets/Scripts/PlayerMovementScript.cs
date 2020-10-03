@@ -17,10 +17,6 @@ public class PlayerMovementScript : MonoBehaviour {
     public Rigidbody myBody;
     public float forwardForce = 20f;
 
-
-
-
-
     void Start() {
 
         myBody = GetComponent<Rigidbody>();
@@ -43,20 +39,15 @@ public class PlayerMovementScript : MonoBehaviour {
 
         if (lineTrigIn3.lineIn3Triggered == true) {
             UTurn();
-
         }
 
     }//update
 
     public void Move() {
         myBody.AddForce(transform.forward.normalized * forwardForce * Time.deltaTime); //  adding force to z axis
-
-
     }
-
     void FirstTurn() {
         if (lineTriggerInScript.lineInTriggered == true) { //1.line triggers
-
 
             if (Input.GetMouseButton(0)) { //car 1. viraj içinde ise, mouse basılırsa car ve rotateObj2 arasına line çizilecek
 
@@ -64,55 +55,30 @@ public class PlayerMovementScript : MonoBehaviour {
                 //rotateObj1Transform = GameObject.Find("RotationObj1").transform;
                 Debug.DrawLine(transform.position, rotateObj1Transform.transform.position, Color.black);
                 //}
-
-                /* transform.GetChild(4).gameObject.SetActive(true);*/ //1. car hinge joint activated connectec bodyi değiştir
-
             }
-            //if (Input.GetMouseButtonUp(0)) {
-
-            //    transform.GetChild(4).gameObject.SetActive(false); //mouse up ise 2. car hinge joint deactivated
-            //}
-
             if (lineTriggerOutScript.lineOutTriggered == true) {
-
-                //transform.GetChild(4).gameObject.SetActive(false); //çıkış yaptıysa 2. car hinge joint destoyed
 
                 lineTriggerInScript.lineInTriggered = false;
             }
-
         }
-
     }//end FirstTurn();
-
 
     void SecondTurn() {
 
         if (lineTrigIn2.lineIn2Triggered == true) {
 
             if (Input.GetMouseButton(0)) { //car viraj içinde ise, mouse basılırsa car ve rotate obj arasına line çizilecek
-
-
                 //if (rotateObj2Transform != null) {
                 //    rotateObj2Transform = GameObject.Find("RotationObj2").transform;
                 Debug.DrawLine(transform.position, rotateObj2Transform.transform.position, Color.black); // null error?
-                                                                                                         //}
-
-                //transform.GetChild(5).gameObject.SetActive(true); //car hinge joint activated***yeni joint yap hepsi 5.olcak!!!!!!!!!!!
-
+                //}
             }
-            //if (Input.GetMouseButtonUp(0)) {
-
-            //        transform.GetChild(5).gameObject.SetActive(false); //mouse up ise car hinge joint deactivated
-            //    }
-
-
+            
             if (lineTrigOut2.lineOut2Triggered == true) {
                 lineTrigIn2.lineIn2Triggered = false;
-
-                //transform.GetChild(5).gameObject.SetActive(false); //çıkış yaptıysa car hinge joint deactivated
+            
             }
         }
-
     }//end second turn
 
 
@@ -121,27 +87,15 @@ public class PlayerMovementScript : MonoBehaviour {
         if (lineTrigIn3.lineIn3Triggered == true) {
 
             if (Input.GetMouseButton(0)) { //car viraj içinde ise, mouse basılırsa car ve rotate obj3 arasına line çizilecek
-
-
                 //if (rotateObj3Transform != null) {
                 //    rotateObj3Transform = GameObject.Find("RotationObj3").transform;
                 //}
                 Debug.DrawLine(transform.position, rotateObj3Transform.transform.position, Color.black);
-                //transform.GetChild(6).gameObject.SetActive(true); //car hinge joint 6 activated***yeni joint yap hepsi 6.olcak!!!!!!!!!!!
-
             }
-            //if (Input.GetMouseButtonUp(0)) {
-
-            //    transform.GetChild(6).gameObject.SetActive(false); //mouse up ise car hinge joint 6 deactivated
-            //}
-
             if (lineTrigOut3.lineOut3Triggered == true) {
                 lineTrigIn3.lineIn3Triggered = false;
-                //transform.GetChild(6).gameObject.SetActive(false); //çıkış yaptıysa car hinge joint 6 deactivated
             }
         }
+    }//end U turn
 
-
-    }
-
-}
+}//end class

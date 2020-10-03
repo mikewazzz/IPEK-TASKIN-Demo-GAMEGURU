@@ -12,7 +12,7 @@ public class ScoreScript : MonoBehaviour {
         scoreTextUI = GetComponent<Text>();
     }
     void Update() {
-        scoreTextUI.text = "Score: " + scoreAmount.ToString(); //displays score UI 
+        scoreTextUI.text =  scoreAmount.ToString(); //displays score UI 
     }
 
 }//end class

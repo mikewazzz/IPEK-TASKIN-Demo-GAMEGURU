@@ -1,4 +1,4 @@
-# GAMEGURU İpek Taşkın Demo - 3 ekim 
+# Sling Drive Demo - İpek Taşkın
 
 -Demoda bir sağ bir sol ve bir de U dönüş mekanikleri bulunmaktadır
 -Arabanın hareketi virajları drift yaparak geçecek şekilde ayarlanmıştır
